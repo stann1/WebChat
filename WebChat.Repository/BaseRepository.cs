@@ -8,7 +8,7 @@ using System.Data.Entity;
 
 namespace WebChat.Repository
 {
-    class BaseRepository<T> : IRepository<T> where T : class
+    abstract class BaseRepository<T> : IRepository<T> where T : class
     {
         protected DbContext dbContext;
         protected DbSet<T> entitySet;
