@@ -15,5 +15,6 @@ namespace WebChat.Models
         public Nullable<System.DateTime> LastActivity { get; set; }
         public string UserDetails { get; set; }
         public string Ip { get; set; }
+        public string UserKey { get; set; }
     }
 }
