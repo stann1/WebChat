@@ -15,7 +15,7 @@ namespace WebChatAPI.Controllers
     {
         SessionRepository sessionRepository;
 
-        public SessionController(IRepository<Session> sessionRepository)
+        public SessionController(IRepository<ChatSession> sessionRepository)
         {
             this.sessionRepository = (SessionRepository)sessionRepository;
         }
@@ -35,7 +35,7 @@ namespace WebChatAPI.Controllers
         public string Post([FromBody]UserStartChat data)
         {
             var newChannel = PubNubNewChannel.CreatenewChannel();
-            var sessionModel = new Session()
+            var sessionModel = new ChatSession()
             {
                 ConnectionString = newChannel,
                 SenderId = data.SenderId,

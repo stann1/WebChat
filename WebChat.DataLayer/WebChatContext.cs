@@ -17,7 +17,7 @@ namespace WebChat.DataLayer
 
         public DbSet<User> Users { get; set; }
 
-        public DbSet<Session> Sessions { get; set; }
+        public DbSet<ChatSession> Sessions { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

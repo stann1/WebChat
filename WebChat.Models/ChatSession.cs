@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebChat.Models
 {
-    public class Session
+    public class ChatSession
     {
         public int SessionId { get; set; }
         public int SenderId { get; set; }

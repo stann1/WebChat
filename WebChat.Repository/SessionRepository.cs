@@ -8,7 +8,7 @@ using WebChat.Models;
 
 namespace WebChat.Repository
 {
-    public class SessionRepository : BaseRepository<Session>
+    public class SessionRepository : BaseRepository<ChatSession>
     {
         public SessionRepository(DbContext dbContext)
             : base(dbContext)
