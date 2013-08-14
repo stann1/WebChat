@@ -9,5 +9,6 @@ namespace WebChat.Repository
 {
     public class MessagesRepository: BaseRepository<Message>
     {
+
     }
 }
