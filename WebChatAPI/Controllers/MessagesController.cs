@@ -11,11 +11,11 @@ namespace WebChatAPI.Controllers
 {
     public class MessagesController : ApiController
     {
-        private IRepository<Messages> data;
+        MessagesRepository data;
 
-        public MessagesController()
+        public MessagesController(IRepository<Message> studentsRepository)
         {
-            this.data = new MessagesRepository();
+            this.data = (MessagesRepository)studentsRepository;
         }
 
         public void Send(int senderId, int receiverId, [FromBody]string content)

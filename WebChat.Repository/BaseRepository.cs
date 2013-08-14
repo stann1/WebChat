@@ -8,7 +8,7 @@ using System.Data.Entity;
 
 namespace WebChat.Repository
 {
-    abstract class BaseRepository<T> : IRepository<T> where T : class
+    public abstract class BaseRepository<T> : IRepository<T> where T : class
     {
         protected DbContext dbContext;
         protected DbSet<T> entitySet;
@@ -26,7 +26,10 @@ namespace WebChat.Repository
             return entity;
         }
 
-        public abstract T Update(int id, T entity);
+        public virtual T Update(int id, T entity)
+        {
+            return entity;
+        }
 
         public virtual void Delete(int id)
         {
