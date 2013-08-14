@@ -290,6 +290,16 @@
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebChat.Models\WebChat.Models.csproj">
+      <Project>{f068f0b3-308e-473e-ab79-a64f55add145}</Project>
+      <Name>WebChat.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebChat.Repository\WebChat.Repository.csproj">
+      <Project>{c1b695fc-77a8-4faa-8878-28507ffb7873}</Project>
+      <Name>WebChat.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
