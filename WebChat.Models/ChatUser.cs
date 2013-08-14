@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebChat.Models
 {
-    public class User
+    public class ChatUser
     {
         public int UserId { get; set; }
         public string Username { get; set; }

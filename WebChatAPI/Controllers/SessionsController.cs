@@ -11,14 +11,15 @@ using WebChat.Models;
 
 namespace WebChatAPI.Controllers
 {
-    public class SessionController : ApiController
+    public class SessionsController : ApiController
     {
         SessionRepository sessionRepository;
 
-        public SessionController(IRepository<ChatSession> sessionRepository)
+        public SessionsController(IRepository<ChatSession> sessionRepository)
         {
             this.sessionRepository = (SessionRepository)sessionRepository;
         }
+
         // GET api/sessions
         public IEnumerable<string> Get()
         {

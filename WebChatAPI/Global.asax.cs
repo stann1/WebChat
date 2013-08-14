@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using WebChatAPI.Resolver;
 
 namespace WebChatAPI
 {
@@ -14,6 +15,11 @@ namespace WebChatAPI
 
     public class WebApiApplication : System.Web.HttpApplication
     {
+        public void ConfigureDepentencyResolver(HttpConfiguration config)
+        {
+            config.DependencyResolver = new DBDependencyResolver();
+        }
+
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();

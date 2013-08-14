@@ -15,7 +15,7 @@ namespace WebChat.DataLayer
 
         //public DbSet<Message> Messages { get; set; }
 
-        public DbSet<User> Users { get; set; }
+        public DbSet<ChatUser> Users { get; set; }
 
         public DbSet<ChatSession> Sessions { get; set; }
 

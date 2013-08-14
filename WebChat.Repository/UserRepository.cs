@@ -10,7 +10,7 @@ using WebChat.DataLayer;
 
 namespace WebChat.Repository
 {
-    public class UserRepository: BaseRepository<User>
+    public class UserRepository: BaseRepository<ChatUser>
     {
         private const int Sha1CodeLength = 40;
         
@@ -106,7 +106,7 @@ namespace WebChat.Repository
                     }
                 }
 
-                dbUser = new User()
+                dbUser = new ChatUser()
                 {
                     Username = usernameToLower,                    
                     Pass = authCode

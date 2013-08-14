@@ -4,11 +4,20 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using WebChat.Models;
+using WebChat.Repository;
 
 namespace WebChatAPI.Controllers
 {
     public class UsersController : ApiController
     {
+        UserRepository sessionRepository;
+
+        public UsersController(IRepository<ChatUser> sessionRepository)
+        {
+            this.sessionRepository = (UserRepository)sessionRepository;
+        }
+
         // GET api/login
         public IEnumerable<string> Get()
         {
