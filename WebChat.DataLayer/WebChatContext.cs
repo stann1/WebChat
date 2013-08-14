@@ -13,7 +13,7 @@ namespace WebChat.DataLayer
             Database.SetInitializer<WebChatContext>(new DropCreateDatabaseIfModelChanges<WebChatContext>());
         }
 
-        public DbSet<Message> Messages { get; set; }
+        //public DbSet<Message> Messages { get; set; }
 
         public DbSet<User> Users { get; set; }
 
