@@ -11,7 +11,7 @@ namespace WebChatAPI.Controllers
 {
     public class MessagesController : ApiController
     {
-        private IRepository<Message> data;
+        private IRepository<Messages> data;
 
         public MessagesController()
         {
