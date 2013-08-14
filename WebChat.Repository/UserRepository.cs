@@ -10,10 +10,8 @@ namespace WebChat.Repository
 {
     public class UserRepository: BaseRepository<User>
     {
-        public UserRepository(DbContext dbContext)
-            : base(dbContext)
+        public UserRepository(DbContext dbContext) : base(dbContext)
         {
-
         }
     }
 }
