@@ -11,7 +11,8 @@ CREATE TABLE Users(
 	PictureUrl varchar(256) NOT NULL,
 	LastActivity date,
 	UserDetails text,
-	Ip nvarchar(100)
+	Ip nvarchar(100),
+	UserKey nvarchar(40)
 );
 GO
 

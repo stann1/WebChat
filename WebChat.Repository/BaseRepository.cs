@@ -3,35 +3,50 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WebChat.Models;
+using System.Data.Entity;
 
 namespace WebChat.Repository
 {
-    class BaseRepository<T> : IRepository<T>
+    class BaseRepository<T> : IRepository<T> where T : class
     {
+        protected DbContext dbContext;
+        protected DbSet<T> entitySet;
 
-        public T Add(T entity)
+        public BaseRepository(DbContext dbContext)
         {
-            throw new NotImplementedException();
+            this.dbContext = dbContext;
+            this.entitySet = this.dbContext.Set<T>();
         }
 
-        public T Update(int id, T entity)
+        public virtual T Add(T entity)
         {
-            throw new NotImplementedException();
+            this.entitySet.Add(entity);
+            this.dbContext.SaveChanges();
+            return entity;
         }
 
-        public void Delete(int id)
+        public abstract T Update(int id, T entity);
+
+        public virtual void Delete(int id)
         {
-            throw new NotImplementedException();
+            var entity = this.entitySet.Find(id);
+            if (entity != null)
+            {
+                this.entitySet.Remove(entity);
+                this.dbContext.SaveChanges();
+            }
         }
 
-        public T Get(int id)
+        public virtual T Get(int id)
         {
-            throw new NotImplementedException();
+            T entity = this.entitySet.Find(id);
+            return entity;
         }
 
         public IQueryable<T> All()
         {
-            throw new NotImplementedException();
+            return this.entitySet;
         }
 
         public IQueryable<T> Find(System.Linq.Expressions.Expression<Func<T, int, bool>> predicate)
