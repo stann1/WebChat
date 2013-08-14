@@ -17,6 +17,24 @@ namespace WebChatAPI.Controllers
         {
             this.sessionRepository = (UserRepository)sessionRepository;
         }
+        [HttpPost]
+        [ActionName("register")]
+        public HttpResponseMessage RegisterUser(ChatUser user)
+        {
+            if (user == null || user.Username == null)
+            {
+                var errResponse = this.Request.CreateErrorResponse(HttpStatusCode.BadRequest, "The name of the User cannot be empty");
+                return errResponse;
+            }
+            var entity = this.sessionRepository.Add(user);
+
+            var response =
+                 Request.CreateResponse(HttpStatusCode.Created, entity);
+
+            response.Headers.Location = new Uri(Url.Link("DefaultApi",
+                new { id = entity.UserId }));
+            return response;
+        }
 
         // GET api/login
         public IEnumerable<string> Get()

@@ -65,19 +65,7 @@ namespace WebChat.Repository
                 throw new ServerErrorException("Username contains invalid characters", "INV_USRNAME_CHARS");
             }
         }
-
-        private static void ValidateNickname(string nickname)
-        {
-            if (nickname == null || nickname.Length < MinUsernameNicknameChars || nickname.Length > MaxUsernameNicknameChars)
-            {
-                throw new ServerErrorException("Nickname should be between 4 and 30 symbols long", "INV_NICK_LEN");
-            }
-            else if (nickname.Any(ch => !ValidNicknameChars.Contains(ch)))
-            {
-                throw new ServerErrorException("Nickname contains invalid characters", "INV_NICK_CHARS");
-            }
-        }
-
+        
         private static void ValidateAuthCode(string authCode)
         {
             if (authCode.Length != Sha1CodeLength)
