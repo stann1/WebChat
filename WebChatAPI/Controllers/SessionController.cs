@@ -7,9 +7,9 @@ using System.Web.Http;
 
 namespace WebChatAPI.Controllers
 {
-    public class SessionsController : ApiController
+    public class SessionController : ApiController
     {
-        public SessionsController()
+        public SessionController()
         {
         }
         // GET api/sessions
