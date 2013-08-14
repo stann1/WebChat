@@ -45,10 +45,15 @@
     <Compile Include="BaseRepository.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServerErrorException.cs" />
     <Compile Include="SessionRepository.cs" />
     <Compile Include="UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WebChat.DataLayer\WebChat.DataLayer.csproj">
+      <Project>{2181a11e-9987-459f-a062-5d4eabaf92c4}</Project>
+      <Name>WebChat.DataLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WebChat.Models\WebChat.Models.csproj">
       <Project>{f068f0b3-308e-473e-ab79-a64f55add145}</Project>
       <Name>WebChat.Models</Name>
