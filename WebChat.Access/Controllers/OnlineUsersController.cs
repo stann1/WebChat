@@ -52,10 +52,19 @@ namespace WebChat.Access.Controllers
 
             return list;
         }
+        [HttpPost]
+        [ActionName("UserIsOnline")]
 
         public void Post(string sessionKey)
         {
+            int userId = GetUserBySessionKey.Get(sessionKey);
 
+            if (userId == 0)
+            {
+                throw new ArgumentException();
+            }
+
+            this.repository.Update(userId, new User() { LastActivity = DateTime.Now });
         }
     }
 }

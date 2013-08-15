@@ -15,5 +15,9 @@ namespace Repository
         {
 
         }
+
+        public void Update(int id, SendFile entity)
+        {
+        }
     }
 }

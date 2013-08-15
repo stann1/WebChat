@@ -13,8 +13,9 @@ namespace Repository
         public ChatsRepository(DbContext dbContext)
             : base(dbContext)
         {
-
         }
-
+        public void Update(int id, Chat entity)
+        {
+        }
     }
 }
