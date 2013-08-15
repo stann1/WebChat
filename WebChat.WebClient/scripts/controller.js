@@ -7,7 +7,7 @@ var controllers = (function () {
 
 	var updateTimer = null;
 
-	var rootUrl = "http://localhost:40643/api/";
+	var rootUrl = "http://localhost:55455/api/";
 	var Controller = Class.create({
 		init: function () {
 			this.persister = persisters.get(rootUrl);
@@ -38,7 +38,7 @@ var controllers = (function () {
 			}, 15000);
 		},
 		loadGame: function (selector, gameId) {
-			this.persister.game.state(gameId, function (gameState) {
+			this.persister.chat.state(gameId, function (gameState) {
 				var gameHtml = ui.gameState(gameState);
 				$(selector + " #game-holder").html(gameHtml)
 			});
@@ -94,39 +94,16 @@ var controllers = (function () {
 				});
 			});
 
-			wrapper.on("click", "#open-games-container a", function () {
-				$("#game-join-inputs").remove();
-				var html =
-					'<div id="game-join-inputs">' +
-						'Number: <input type="text" id="tb-game-number"/><br/>' +
-						'Password: <input type="text" id="tb-game-pass"/><br/>' +
-						'<button id="btn-join-game">join</button>' +
-					'</div>';
-				$(this).after(html);
-			});
-			wrapper.on("click", "#btn-join-game", function () {
-				var game = {
-					number: $("#tb-game-number").val(),
-					gameId: $(this).parents("li").first().data("game-id")
-				};
-
-				var password = $("#tb-game-pass").val();
-
-				if (password) {
-					game.password = password;
-				}
-				self.persister.game.join(game);
-			});
-			wrapper.on("click", "#btn-create-game", function () {
-				var game = {
+			wrapper.on("click", "#btn-start", function () {
+				var chatWindow = {
 					title: $("#tb-create-title").val(),
 					number: $("#tb-create-number").val(),
 				}
 				var password = $("#tb-create-pass").val();
 				if (password) {
-					game.password = password;
+					chatWindow.password = password;
 				}
-				self.persister.game.create(game);
+				self.persister.chat.create(chatWindow);
 			});
 
 			wrapper.on("click", "#active-games-container li.game-status-full a.btn-active-game", function () {
@@ -146,7 +123,7 @@ var controllers = (function () {
 				var parent = $(this).parent();
 
 				var gameId = parent.data("game-id");
-				self.persister.game.start(gameId, function () {
+				self.persister.chat.start(gameId, function () {
 					wrapper.find("#game-holder").html("started");
 				},
 				function (err) {
@@ -161,12 +138,12 @@ var controllers = (function () {
 			});
 		},
 		updateUI: function (selector) {
-			this.persister.game.open(function (games) {
+			this.persister.chat.open(function (games) {
 				var list = ui.openGamesList(games);
 				$(selector + " #open-games")
 					.html(list);
 			});
-			this.persister.game.myActive(function (games) {
+			this.persister.chat.myActive(function (games) {
 				var list = ui.activeGamesList(games);
 				$(selector + " #active-games")
 					.html(list);
