@@ -73,12 +73,16 @@
     <None Include="scripts\external\jquery-2.0.3.intellisense.js" />
     <Content Include="App_Readme\Spring.Rest.txt" />
     <None Include="index.temp" />
+    <Content Include="scripts\class.js" />
+    <Content Include="scripts\controller.js" />
     <Content Include="scripts\external\dropbox.min.js" />
     <Content Include="scripts\external\jquery-2.0.3.js" />
     <Content Include="scripts\external\jquery-2.0.3.min.js" />
     <Content Include="scripts\external\jquery.ui.datepicker.js" />
     <Content Include="scripts\http-requester.js" />
     <Content Include="scripts\manageData.js" />
+    <Content Include="scripts\persister.js" />
+    <Content Include="scripts\ui.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

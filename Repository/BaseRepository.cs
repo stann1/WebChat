@@ -26,7 +26,7 @@ namespace Repository
         }
 
         public virtual T Update(int id, T entity);
-
+        
         public void Delete(int id)
         {
             var entityToRemove = this.entitySet.Find(id);
