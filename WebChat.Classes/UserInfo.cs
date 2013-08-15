@@ -13,6 +13,5 @@ namespace WebChat.Classes
         public string PictureUrl { get; set; }
         public string SessionKey { get; set; }
         public string UserDetails { get; set; }
-
     }
 }

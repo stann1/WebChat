@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D45F1ED2-6714-40BA-9001-2BD0049A07F7}</ProjectGuid>
+    <ProjectGuid>{64A0226B-00AA-418C-BC93-0997EF814B60}</ProjectGuid>
     <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -39,24 +39,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Common.Logging">
-      <HintPath>..\packages\Common.Logging.2.1.2\lib\net40\Common.Logging.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Pubnub.3.4.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Spring.Rest, Version=1.1.1.35040, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Spring.Rest">
       <HintPath>..\packages\Spring.Rest.1.1.1\lib\net40-client\Spring.Rest.dll</HintPath>
     </Reference>
-    <Reference Include="Spring.Social.Core, Version=1.0.1.35140, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Spring.Social.Core">
       <HintPath>..\packages\Spring.Social.Core.1.0.1\lib\net40-client\Spring.Social.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Spring.Social.Dropbox, Version=1.2.0.14840, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Spring.Social.Dropbox">
       <HintPath>..\packages\Spring.Social.Dropbox.1.2.0\lib\net40-client\Spring.Social.Dropbox.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -176,14 +170,12 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\ChatsController.cs" />
+    <Compile Include="Controllers\ChatController.cs" />
     <Compile Include="Controllers\DropboxController.cs" />
-    <Compile Include="Controllers\FilesController.cs" />
+    <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\OnlineUsersController.cs" />
     <Compile Include="Controllers\PubnubController.cs" />
-    <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -192,12 +184,8 @@
     <Compile Include="Models\Varibles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pubnub.cs" />
-    <Compile Include="PubnubExample.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Readme\Spring.Rest.txt" />
-    <Content Include="App_Readme\Spring.Social.Core.txt" />
-    <Content Include="App_Readme\Spring.Social.Dropbox.txt" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -317,17 +305,17 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Repository\Repository.csproj">
-      <Project>{63acfab4-86ec-4ccf-a15d-91f93c02e7b7}</Project>
+    <ProjectReference Include="..\Repositoty\Repository.csproj">
+      <Project>{d22ffb96-11ed-4c1a-a1af-f89f14eef5b1}</Project>
       <Name>Repository</Name>
     </ProjectReference>
     <ProjectReference Include="..\WebChat.Classes\WebChat.Classes.csproj">
-      <Project>{b0a73454-3361-4df0-8956-cdf9734b5f05}</Project>
+      <Project>{cfca8f68-524b-48ba-a809-598db145599e}</Project>
       <Name>WebChat.Classes</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WebChat.Models\WebChat.Models.csproj">
-      <Project>{1e607d33-982e-47a7-9aca-be057bb2949e}</Project>
-      <Name>WebChat.Models</Name>
+    <ProjectReference Include="..\WebChat.Model\WebChat.Model.csproj">
+      <Project>{8f4d2f8c-f5c6-4f55-862f-1b45defe50e6}</Project>
+      <Name>WebChat.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
@@ -348,7 +336,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:48238/</IISUrl>
+          <IISUrl>http://localhost:55455/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

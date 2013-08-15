@@ -10,6 +10,6 @@ namespace WebChat.Classes
     {
         public int status { get; set; }
         public string Url { get; set; }
-        public int FromId { get; set; }
+        public int ResiverId { get; set; }
     }
 }
