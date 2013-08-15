@@ -69,6 +69,8 @@
     <Content Include="App_Readme\Spring.Social.Core.txt" />
     <Content Include="App_Readme\Spring.Social.Dropbox.txt" />
     <Content Include="index.html" />
+    <Content Include="js\messenger.js" />
+    <Content Include="pubnub.html" />
     <Content Include="_index.html" />
     <Content Include="packages.config" />
     <None Include="scripts\external\jquery-2.0.3.intellisense.js" />
