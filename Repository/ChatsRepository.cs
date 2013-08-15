@@ -13,7 +13,6 @@ namespace Repository
         public ChatsRepository(DbContext dbContext)
             : base(dbContext)
         {
-
         }
 
     }

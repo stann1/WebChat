@@ -12,8 +12,17 @@ namespace Repository
     {
         public UserRepository(DbContext dbContext)
             : base(dbContext)
-        {
+        {  
+        }
 
+        public User Update(int id, DateTime date)
+        {
+            var user = this.entitySet.Find(id);
+
+            user.LastActivity = date;
+            this.dbContext.SaveChanges();
+
+            return user;
         }
     }
 }
