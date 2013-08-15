@@ -15,11 +15,11 @@ namespace Repository
         {  
         }
 
-        public User Update(int id, DateTime date)
+        public User Update(int id, User entity)
         {
             var user = this.entitySet.Find(id);
 
-            user.LastActivity = date;
+            user.LastActivity = entity.LastActivity;
             this.dbContext.SaveChanges();
 
             return user;

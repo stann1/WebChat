@@ -64,7 +64,7 @@ namespace WebChat.Access.Controllers
                 throw new ArgumentException();
             }
 
-
+            this.repository.Update(userId, new User() { LastActivity = DateTime.Now });
         }
     }
 }
