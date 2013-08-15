@@ -39,6 +39,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Spring.Rest">
+      <HintPath>..\packages\Spring.Rest.1.1.1\lib\net40-client\Spring.Rest.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Social.Core">
+      <HintPath>..\packages\Spring.Social.Core.1.0.1\lib\net40-client\Spring.Social.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Social.Dropbox">
+      <HintPath>..\packages\Spring.Social.Dropbox.1.2.0\lib\net40-client\Spring.Social.Dropbox.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -57,12 +66,19 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="scripts\external\jquery-2.0.3.intellisense.js" />
+    <Content Include="App_Readme\Spring.Social.Core.txt" />
+    <Content Include="App_Readme\Spring.Social.Dropbox.txt" />
     <Content Include="index.html" />
+    <Content Include="packages.config" />
+    <None Include="scripts\external\jquery-2.0.3.intellisense.js" />
+    <Content Include="App_Readme\Spring.Rest.txt" />
+    <None Include="index.temp" />
+    <Content Include="scripts\external\dropbox.min.js" />
     <Content Include="scripts\external\jquery-2.0.3.js" />
     <Content Include="scripts\external\jquery-2.0.3.min.js" />
     <Content Include="scripts\external\jquery.ui.datepicker.js" />
     <Content Include="scripts\http-requester.js" />
+    <Content Include="scripts\manageData.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -78,6 +94,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="images\" />
     <Folder Include="styles\" />
   </ItemGroup>
   <PropertyGroup>
