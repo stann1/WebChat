@@ -68,11 +68,11 @@
   <ItemGroup>
     <Content Include="App_Readme\Spring.Social.Core.txt" />
     <Content Include="App_Readme\Spring.Social.Dropbox.txt" />
+    <Content Include="index.html" />
     <Content Include="_index.html" />
     <Content Include="packages.config" />
     <None Include="scripts\external\jquery-2.0.3.intellisense.js" />
     <Content Include="App_Readme\Spring.Rest.txt" />
-    <None Include="index.temp" />
     <Content Include="scripts\class.js" />
     <Content Include="scripts\controller.js" />
     <Content Include="scripts\external\dropbox.min.js" />
