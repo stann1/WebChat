@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{63ACFAB4-86EC-4CCF-A15D-91F93C02E7B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebChat.Classes", "WebChat.Classes\WebChat.Classes.csproj", "{B0A73454-3361-4DF0-8956-CDF9734B5F05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebChat.Access", "WebChat.Access\WebChat.Access.csproj", "{D45F1ED2-6714-40BA-9001-2BD0049A07F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebChat.Models", "WebChat.Models\WebChat.Models.csproj", "{1E607D33-982E-47A7-9ACA-BE057BB2949E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63ACFAB4-86EC-4CCF-A15D-91F93C02E7B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63ACFAB4-86EC-4CCF-A15D-91F93C02E7B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63ACFAB4-86EC-4CCF-A15D-91F93C02E7B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63ACFAB4-86EC-4CCF-A15D-91F93C02E7B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0A73454-3361-4DF0-8956-CDF9734B5F05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0A73454-3361-4DF0-8956-CDF9734B5F05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0A73454-3361-4DF0-8956-CDF9734B5F05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0A73454-3361-4DF0-8956-CDF9734B5F05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D45F1ED2-6714-40BA-9001-2BD0049A07F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D45F1ED2-6714-40BA-9001-2BD0049A07F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D45F1ED2-6714-40BA-9001-2BD0049A07F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D45F1ED2-6714-40BA-9001-2BD0049A07F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E607D33-982E-47A7-9ACA-BE057BB2949E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E607D33-982E-47A7-9ACA-BE057BB2949E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E607D33-982E-47A7-9ACA-BE057BB2949E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E607D33-982E-47A7-9ACA-BE057BB2949E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
