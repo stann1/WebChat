@@ -9,10 +9,10 @@
         var client = new Dropbox.Client({ key: "la6zui697tqpof7" });
 
         // Server-side applications use both the API key and secret.
-        var client = new Dropbox.Client({
-            key: "your-key-here",
-            secret: "your-secret-here"
-        });
+        //var client = new Dropbox.Client({
+        //    key: "your-key-here",
+        //    secret: "your-secret-here"
+        //});
 
         client.onError.addListener(function (error) {
             if (window.console) {  // Skip the "if" in node.js code.
@@ -20,7 +20,21 @@
             }
         });
 
+        client.getAccountInfo(function (error, accountInfo) {
+            if (error) {
+                return showError(error);  // Something went wrong.
+            }
 
+            alert("Hello, " + accountInfo.name + "!");
+        });
+
+        client.writeFile("hello_world.txt", "Hello, world!\n", function (error, stat) {
+            if (error) {
+                return showError(error);  // Something went wrong.
+            }
+
+            alert("File saved as revision " + stat.revisionTag);
+        });
 
     </script>
 </body>
