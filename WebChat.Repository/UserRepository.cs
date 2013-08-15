@@ -1,32 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using WebChat.Models;
 using WebChat.DataLayer;
 
-
 namespace WebChat.Repository
 {
-    public class UserRepository: BaseRepository<ChatUser>
+    public class UserRepository : BaseRepository<ChatUser>
     {
         private const int Sha1CodeLength = 40;
-        
-        private static Random rand = new Random();
-
-        public UserRepository(DbContext dbContext) : base(dbContext)
-        {
-        }
-
         private const string SessionKeyChars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
         private const int SessionKeyLen = 50;
-
         private const string ValidUsernameChars = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM_1234567890";
         private const string ValidNicknameChars = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM_1234567890 -";
         private const int MinUsernameNicknameChars = 4;
         private const int MaxUsernameNicknameChars = 30;
+
+        private static Random rand = new Random((int)DateTime.Now.Ticks);
+
+        public UserRepository(DbContext dbContext)
+            : base(dbContext)
+        {
+        }
 
         private static void ValidateSessionKey(string sessionKey)
         {
@@ -56,7 +52,9 @@ namespace WebChat.Repository
 
         private static void ValidateUsername(string username)
         {
-            if (username == null || username.Length < MinUsernameNicknameChars || username.Length > MaxUsernameNicknameChars)
+            if (username == null 
+                || username.Length < MinUsernameNicknameChars 
+                || username.Length > MaxUsernameNicknameChars)
             {
                 throw new ServerErrorException("Username should be between 4 and 30 symbols long", "INV_USRNAME_LEN");
             }
@@ -65,7 +63,7 @@ namespace WebChat.Repository
                 throw new ServerErrorException("Username contains invalid characters", "INV_USRNAME_CHARS");
             }
         }
-        
+
         private static void ValidateAuthCode(string authCode)
         {
             if (authCode.Length != Sha1CodeLength)
@@ -96,7 +94,7 @@ namespace WebChat.Repository
 
                 dbUser = new ChatUser()
                 {
-                    Username = usernameToLower,                    
+                    Username = usernameToLower,
                     Pass = authCode
                 };
                 context.Users.Add(dbUser);
@@ -113,16 +111,18 @@ namespace WebChat.Repository
             using (context)
             {
                 var usernameToLower = username.ToLower();
-                var user = context.Users.FirstOrDefault(u => u.Username.ToLower() == usernameToLower && u.Pass == authCode);
+                var user = context.Users.FirstOrDefault(u => u.Username.ToLower() == usernameToLower 
+                    && u.Pass == authCode);
                 if (user == null)
                 {
                     throw new ServerErrorException("Invalid user authentication", "INV_USR_AUTH");
                 }
 
-                var sessionKey = GenerateSessionKey((int)user.ChatUserId);
+                var sessionKey = GenerateSessionKey(user.ChatUserId);
                 user.UserKey = sessionKey;
                 success = true;
                 context.SaveChanges();
+
                 return sessionKey;
             }
         }
@@ -138,7 +138,8 @@ namespace WebChat.Repository
                 {
                     throw new ServerErrorException("Invalid user authentication", "INV_USR_AUTH");
                 }
-                return (int)user.ChatUserId;
+
+                return user.ChatUserId;
             }
         }
 

@@ -13,11 +13,11 @@ namespace WebChatAPI.Controllers
 {
     public class SessionsController : ApiController
     {
-        SessionRepository sessionRepository;
+        IRepository<ChatSession> sessionRepository;
 
         public SessionsController(IRepository<ChatSession> sessionRepository)
         {
-            this.sessionRepository = (SessionRepository)sessionRepository;
+            this.sessionRepository = sessionRepository;
         }
 
         // GET api/sessions
@@ -44,10 +44,6 @@ namespace WebChatAPI.Controllers
             };
 
             var created = this.sessionRepository.Add(sessionModel);
-
-            //var responce = Request.CreateResponse<WebChat.Models.Session>(HttpStatusCode.Created, created);
-            //var resourceLink = Url.Link("DefaultApi", new { id = created.Id });
-            //responce.Headers.Location = new Uri(resourceLink);
 
             return newChannel;
         }
