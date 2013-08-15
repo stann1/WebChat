@@ -32,7 +32,7 @@ namespace WebChatAPI.Controllers
                  Request.CreateResponse(HttpStatusCode.Created, entity);
 
             response.Headers.Location = new Uri(Url.Link("DefaultApi",
-                new { id = entity.UserId }));
+                new { id = entity.ChatUserId }));
             return response;
         }
 

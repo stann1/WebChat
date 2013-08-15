@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,8 @@ namespace WebChat.Models
 {
     public class ChatUser
     {
-        public int UserId { get; set; }
+        //[Key]
+        public int ChatUserId { get; set; }
         public string Username { get; set; }
         public string Pass { get; set; }
         public string PictureUrl { get; set; }

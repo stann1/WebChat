@@ -119,7 +119,7 @@ namespace WebChat.Repository
                     throw new ServerErrorException("Invalid user authentication", "INV_USR_AUTH");
                 }
 
-                var sessionKey = GenerateSessionKey((int)user.UserId);
+                var sessionKey = GenerateSessionKey((int)user.ChatUserId);
                 user.UserKey = sessionKey;
                 success = true;
                 context.SaveChanges();
@@ -138,7 +138,7 @@ namespace WebChat.Repository
                 {
                     throw new ServerErrorException("Invalid user authentication", "INV_USR_AUTH");
                 }
-                return (int)user.UserId;
+                return (int)user.ChatUserId;
             }
         }
 
