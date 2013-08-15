@@ -13,8 +13,7 @@
             if (error) { return showError(error); }
             doSomethingUseful(client);  // The user is now authenticated.
         });
-
-
+        
         // Browser-side applications do not use the API secret.
         //var client = new Dropbox.Client({ key: "la6zui697tqpof7" });
 
