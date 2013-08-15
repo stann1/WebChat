@@ -68,6 +68,7 @@
   <ItemGroup>
     <Content Include="App_Readme\Spring.Social.Core.txt" />
     <Content Include="App_Readme\Spring.Social.Dropbox.txt" />
+    <Content Include="index-old.html" />
     <Content Include="index.html" />
     <Content Include="_index.html" />
     <Content Include="packages.config" />

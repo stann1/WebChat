@@ -21,7 +21,7 @@ var persisters = (function () {
 		init: function (rootUrl) {
 			this.rootUrl = rootUrl;
 			this.user = new UserPersister(this.rootUrl);
-			this.game = new GamePersister(this.rootUrl);
+			this.chat = new GamePersister(this.rootUrl);
 			this.message = new MessagesPersister(this.rootUrl);
 		},
 		isUserLoggedIn: function () {
