@@ -11,7 +11,7 @@ namespace WebChat.Access.Models
     {
         public static int Get(string key)
         {
-            IRepository<User> repository = new UserRepository(new ChatEntities());
+            IRepository<WebChat.Model.User> repository = new UserRepository(new ChatEntities());
 
             var allUsers = repository.All();
 
