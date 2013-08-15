@@ -68,7 +68,7 @@
   <ItemGroup>
     <Content Include="App_Readme\Spring.Social.Core.txt" />
     <Content Include="App_Readme\Spring.Social.Dropbox.txt" />
-    <None Include="index.1" />
+    <Content Include="_index.html" />
     <Content Include="packages.config" />
     <None Include="scripts\external\jquery-2.0.3.intellisense.js" />
     <Content Include="App_Readme\Spring.Rest.txt" />
