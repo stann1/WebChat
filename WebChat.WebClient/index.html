@@ -4,6 +4,24 @@
     <title></title>
 </head>
 <body>
+    <script>
+        // Browser-side applications do not use the API secret.
+        var client = new Dropbox.Client({ key: "la6zui697tqpof7" });
 
+        // Server-side applications use both the API key and secret.
+        var client = new Dropbox.Client({
+            key: "your-key-here",
+            secret: "your-secret-here"
+        });
+
+        client.onError.addListener(function (error) {
+            if (window.console) {  // Skip the "if" in node.js code.
+                console.error(error);
+            }
+        });
+
+
+
+    </script>
 </body>
 </html>
