@@ -113,5 +113,17 @@
     <!--Add a file picker for the user to start the upload process -->
     <input type="file" id="filePicker" style="display: none" />
     <input type="button" id="authorizeButton" style="display: none" value="Authorize" />
+
+      
+       <form name="form1" method="post" action="http://localhost:48238/api/dropbox" enctype="multipart/form-data">
+    <div>
+        <label>
+           Brows File</label>
+        <input name="myFile" type="file" />
+    </div>
+    <div>
+        <input type="submit" value="Upload" />
+    </div>
+    </form>
   </body>
 </html>
