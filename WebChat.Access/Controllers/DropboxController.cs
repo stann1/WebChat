@@ -8,13 +8,9 @@ using System.Web;
 using System.IO;
 using System.Diagnostics;
 
-//using Spring.Social.OAuth2;
-
-//using Spring.Social.OAuth1;
 using Spring.Social.Dropbox.Api;
 using Spring.Social.Dropbox.Connect;
 using Spring.IO;
-using Spring.Social.Dropbox.Connect;
 
 namespace WebChat.Access.Controllers
 {
